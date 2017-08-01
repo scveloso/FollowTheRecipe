@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_background"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:id="@+id/header_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/img_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgViewRecipeImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:adjustViewBounds="true"
+                android:background="@android:color/white"
+                android:contentDescription="@string/description_recipe_pic"
+                app:srcCompat="@mipmap/ic_dining" />
+
+            <ImageButton
+                android:id="@+id/imgBtnTakeRecipePic"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgViewRecipeImage"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bgroundcharacter"
+                android:contentDescription="@string/take_recipe_pic"
+                android:src="@android:drawable/ic_menu_camera" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/title_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/img_container"
+            android:layout_toRightOf="@id/img_container">
+
+            <TextView
+                android:id="@+id/d_txtTitle"
+                style="?android:listSeparatorTextViewStyle"
+                android:layout_height="wrap_content"
+                android:text="@string/title_header"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <EditText
+                android:id="@+id/edTxtRecipeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/d_txtTitle"
+                android:hint="@string/recipe_title_hint"
+                android:imeOptions="actionDone"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                android:text="" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_container"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/ingredients_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/d_txtIngredients"
+                style="?android:listSeparatorTextViewStyle"
+                android:layout_marginLeft="-8dp"
+                android:layout_marginStart="-8dp"
+                android:text="@string/ingredients_header"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <ImageButton
+                android:id="@+id/imgBtnAddIngredient"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:adjustViewBounds="false"
+                android:background="@drawable/bgroundcharacter"
+                android:contentDescription="@string/description_add_ingredient"
+                android:cropToPadding="false"
+                android:src="@mipmap/ic_imgbtn_add" />
+
+            <com.woxthebox.draglistview.DragListView
+                android:id="@+id/listIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/d_txtIngredients"></com.woxthebox.draglistview.DragListView>
+
+            <RelativeLayout
+                android:id="@+id/noIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/d_txtIngredients"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/txtNoIngredients"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:padding="5dp"
+                    android:text="@string/empty_ingredients_indicator" />
+
+                <TextView
+                    android:id="@+id/txtAddAnIngredient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtNoIngredients"
+                    android:layout_centerHorizontal="true"
+                    android:padding="5dp"
+                    android:text="@string/add_hint"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/directions_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/d_txtDirections"
+                style="?android:listSeparatorTextViewStyle"
+                android:layout_marginLeft="-8dp"
+                android:layout_marginStart="-8dp"
+                android:text="@string/directions_header"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <ImageButton
+                android:id="@+id/imgBtnAddDirection"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:adjustViewBounds="false"
+                android:background="@drawable/bgroundcharacter"
+                android:contentDescription="@string/description_add_direction"
+                android:cropToPadding="false"
+                android:src="@mipmap/ic_imgbtn_add" />
+
+            <com.woxthebox.draglistview.DragListView
+                android:id="@+id/listDirections"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/d_txtDirections"></com.woxthebox.draglistview.DragListView>
+
+            <RelativeLayout
+                android:id="@+id/noDirections"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/d_txtDirections"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/txtNoDirections"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:padding="5dp"
+                    android:text="@string/empty_directions_indicator" />
+
+                <TextView
+                    android:id="@+id/txtAddADirection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtNoDirections"
+                    android:layout_centerHorizontal="true"
+                    android:padding="5dp"
+                    android:text="@string/add_hint"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

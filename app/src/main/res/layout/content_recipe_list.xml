@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.sveloso.followtherecipe.RecipeListActivity"
+    tools:showIn="@layout/activity_recipe_list">
+
+    <com.woxthebox.draglistview.DragListView
+        android:id="@+id/recipe_list"
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
+    </com.woxthebox.draglistview.DragListView>
+
+    <RelativeLayout
+        android:id="@+id/noRecipesContainer"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgNoRecipes"
+            android:layout_width="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="100dp"
+            android:src="@mipmap/ic_dining" />
+
+        <TextView
+            android:id="@+id/txtNoRecipes"
+            android:layout_below="@id/imgNoRecipes"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:text="@string/empty_recipes_indicator" />
+
+        <TextView
+            android:id="@+id/txtAddANewRecipe"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/txtNoRecipes"
+            android:text="@string/add_hint"
+            android:textColor="@android:color/darker_gray"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

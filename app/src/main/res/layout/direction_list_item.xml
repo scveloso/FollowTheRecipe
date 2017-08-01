@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.woxthebox.draglistview.swipe.ListSwipeItem
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:leftViewId="@+id/item_left"
+    app:rightViewId="@+id/item_right"
+    app:swipeViewId="@+id/item_layout">
+
+    <TextView
+        android:id="@+id/item_left"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/item_layout"
+        android:layout_alignTop="@+id/item_layout"
+        android:background="#ff0000"
+        android:gravity="start|center_vertical"
+        android:paddingLeft="5dp"
+        android:paddingStart="5dp"
+        android:text="@string/question_delete"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/item_right"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/item_layout"
+        android:layout_alignTop="@+id/item_layout"
+        android:background="#ff0000"
+        android:gravity="end|center_vertical"
+        android:paddingEnd="5dp"
+        android:paddingRight="5dp"
+        android:text="@string/question_delete"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/item_layout"
+        android:layout_width="match_parent"
+        android:paddingLeft="5dp"
+        android:paddingStart="5dp"
+        android:background="@color/default_background"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtNumber"
+            android:layout_width="wrap_content"
+            android:text="@string/number_direction_marker"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtDirection"
+            android:text="@string/input_string"
+            android:layout_toRightOf="@id/txtIngredient"
+            android:layout_toEndOf="@id/txtIngredient"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+</com.woxthebox.draglistview.swipe.ListSwipeItem>

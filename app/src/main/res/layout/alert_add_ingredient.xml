@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/add_ingredient"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="10dp"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/ingredient_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtIngredient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/add_ingredient_header"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTxtIngredient"
+            android:layout_below="@id/txtIngredient"
+            android:layout_alignLeft="@id/txtIngredient"
+            android:layout_alignStart="@id/txtIngredient"
+            android:layout_width="150dp"
+            android:imeOptions="actionDone"
+            android:inputType="textCapSentences"
+            android:maxLines="1"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/quantity_container"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_toRightOf="@id/ingredient_container"
+        android:layout_toEndOf="@id/ingredient_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/add_quantity_header"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTxtQuantity"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/txtQuantity"
+            android:layout_alignStart="@id/txtQuantity"
+            android:layout_below="@id/txtQuantity"
+            android:inputType="textCapSentences"
+            android:imeOptions="actionDone"
+            android:maxLines="1" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
