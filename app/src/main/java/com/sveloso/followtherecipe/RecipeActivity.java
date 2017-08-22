@@ -1,6 +1,7 @@
 package com.sveloso.followtherecipe;
 
 import android.app.AlertDialog;
+import android.content.ClipData;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -21,6 +22,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -308,12 +310,32 @@ public class RecipeActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_recipe_activity, menu);
+
+        MenuItem miDelete = menu.findItem(R.id.action_delete);
+        if (recipeId != null) {
+            MenuItem item = menu.findItem(R.id.action_delete);
+            item.setEnabled(true);
+        } else { /* If not, create a new recipe. */
+            MenuItem item = menu.findItem(R.id.action_delete);
+            item.setEnabled(false);
+        }
+        return true;
+    }
+
     /* Ask user if they want to save or discard Recipe changes */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
+
+                return true;
+            case R.id.action_delete:
+                Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show();
 
                 return true;
             default:

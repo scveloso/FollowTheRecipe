@@ -27,4 +27,5 @@
     <string name="toast_message_recipe_deleted">Recipe deleted.</string>
     <string name="toast_message_recipe_created">Recipe created.</string>
     <string name="toast_message_recipe_updated">Recipe updated.</string>
+    <string name="action_delete">Delete Recipe</string>
 </resources>
